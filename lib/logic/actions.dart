@@ -7,6 +7,15 @@ class UserLoadedAction {
   final List<WeightEntry> cachedEntries;
 
   UserLoadedAction(this.firebaseUser, {this.cachedEntries = const []});
+}
+
+class AddDatabaseReferenceAction {
+  final DatabaseReference databaseReference;
+  final List<WeightEntry> cachedEntries;
+
+  AddDatabaseReferenceAction(this.databaseReference,
+      {this.cachedEntries = const []});
+}
 
 class GetSavedWeightNote {}
 
