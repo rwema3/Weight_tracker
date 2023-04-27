@@ -30,3 +30,7 @@ DateTime copyDateWithoutTime(DateTime dateTime) {
 
 /// Adds missing entry at the start of a chart.
 ///
+/// If user has not put entry on the date which is first date of a chart,
+/// it takes last known weight before that date and estimates linearly weight on the beginning date.
+/// Then it creates and adds fake [WeightEntry] with that weight and date.
+void _addFakeEntryOnTheChartBeginning(List<WeightEntry> initialEntries,
