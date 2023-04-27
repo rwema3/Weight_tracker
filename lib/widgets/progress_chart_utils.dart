@@ -39,3 +39,12 @@ void _addFakeEntryOnTheChartBeginning(List<WeightEntry> initialEntries,
       initialEntries.where((entry) => !entries.contains(entry)).toList();
   WeightEntry firstEntryAfterBeginning = entries.last;
   WeightEntry lastEntryBeforeBeginning = entriesNotInChart.first;
+  WeightEntry fakeEntry = new WeightEntry(
+      beginningDate,
+      _calculateWeightOnBeginningDate(
+          lastEntryBeforeBeginning, firstEntryAfterBeginning, beginningDate),
+      null);
+  entries.add(fakeEntry);
+}
+
+bool _isMissingEntryFromBeginningDate(
