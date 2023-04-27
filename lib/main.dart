@@ -29,4 +29,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     store.dispatch(new InitAction());
     return new StoreProvider(
-    
+      store: store,
+      child: new MaterialApp(
+        title: 'Weight Tracker',
+        theme: new ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
+        home: new MainPage(title: "Weight Tracker", analytics: analytics),
+      ),
+    );
+  }
+}
