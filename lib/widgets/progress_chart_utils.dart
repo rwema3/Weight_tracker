@@ -63,3 +63,8 @@ bool _isAnyEntryBeforeBeginningDate(
 double _calculateWeightOnBeginningDate(WeightEntry lastEntryBeforeBeginning,
     WeightEntry firstEntryAfterBeginning, DateTime beginningDate) {
   DateTime firstEntryDateTime =
+      copyDateWithoutTime(firstEntryAfterBeginning.dateTime);
+  DateTime lastEntryDateTime =
+      copyDateWithoutTime(lastEntryBeforeBeginning.dateTime);
+
+  int differenceInDays =
