@@ -24,3 +24,9 @@ class MyApp extends StatelessWidget {
           mainPageState: new MainPageReduxState(hasEntryBeenAdded: false),
           weightEntryDialogState: new WeightEntryDialogReduxState()),
       middleware: [middleware].toList());
+
+  @override
+  Widget build(BuildContext context) {
+    store.dispatch(new InitAction());
+    return new StoreProvider(
+    
