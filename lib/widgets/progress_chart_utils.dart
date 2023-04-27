@@ -68,3 +68,6 @@ double _calculateWeightOnBeginningDate(WeightEntry lastEntryBeforeBeginning,
       copyDateWithoutTime(lastEntryBeforeBeginning.dateTime);
 
   int differenceInDays =
+      firstEntryDateTime.difference(lastEntryDateTime).inDays;
+  double differenceInWeight =
+      firstEntryAfterBeginning.weight - lastEntryBeforeBeginning.weight;
