@@ -34,3 +34,8 @@ DateTime copyDateWithoutTime(DateTime dateTime) {
 /// it takes last known weight before that date and estimates linearly weight on the beginning date.
 /// Then it creates and adds fake [WeightEntry] with that weight and date.
 void _addFakeEntryOnTheChartBeginning(List<WeightEntry> initialEntries,
+    List<WeightEntry> entries, DateTime beginningDate) {
+  List<WeightEntry> entriesNotInChart =
+      initialEntries.where((entry) => !entries.contains(entry)).toList();
+  WeightEntry firstEntryAfterBeginning = entries.last;
+  WeightEntry lastEntryBeforeBeginning = entriesNotInChart.first;
