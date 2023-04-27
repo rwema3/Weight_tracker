@@ -9,3 +9,8 @@ List<WeightEntry> prepareEntryList(
           entry.dateTime.isAfter(beginningDate) ||
           copyDateWithoutTime(entry.dateTime)
               .isAtSameMomentAs(copyDateWithoutTime(beginningDate)))
+      .toList();
+  if (entries.isNotEmpty &&
+      _isMissingEntryFromBeginningDate(beginningDate, entries) &&
+      _isAnyEntryBeforeBeginningDate(beginningDate, initialEntries)) {
+    _addFakeEntryOnTheChartBeginning(initialEntries, entries, beginningDate);
