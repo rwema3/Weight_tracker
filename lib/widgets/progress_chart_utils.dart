@@ -48,3 +48,10 @@ void _addFakeEntryOnTheChartBeginning(List<WeightEntry> initialEntries,
 }
 
 bool _isMissingEntryFromBeginningDate(
+    DateTime beginningDate, List<WeightEntry> entries) {
+  return !entries.any((entry) =>
+      entry.dateTime.day == beginningDate.day &&
+      entry.dateTime.month == beginningDate.month &&
+      entry.dateTime.year == beginningDate.year);
+}
+
