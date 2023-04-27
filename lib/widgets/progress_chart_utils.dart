@@ -55,3 +55,8 @@ bool _isMissingEntryFromBeginningDate(
       entry.dateTime.year == beginningDate.year);
 }
 
+bool _isAnyEntryBeforeBeginningDate(
+    DateTime beginningDate, List<WeightEntry> entries) {
+  return entries.any((entry) => entry.dateTime.isBefore(beginningDate));
+}
+
