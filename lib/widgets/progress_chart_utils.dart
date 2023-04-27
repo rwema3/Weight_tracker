@@ -18,3 +18,7 @@ List<WeightEntry> prepareEntryList(
   return entries;
 }
 
+DateTime getStartDateOfChart(DateTime now, int daysToShow) {
+  DateTime beginningOfChart = now.subtract(
+      new Duration(days: daysToShow - 1, hours: now.hour, minutes: now.minute));
+  return beginningOfChart;
