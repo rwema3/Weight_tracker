@@ -74,3 +74,8 @@ double _calculateWeightOnBeginningDate(WeightEntry lastEntryBeforeBeginning,
   int differenceInDaysFromBeginning =
       beginningDate.difference(lastEntryDateTime).inDays;
   double weightChangeFromLastEntry =
+      (differenceInWeight * differenceInDaysFromBeginning) / differenceInDays;
+  double estimatedWeight =
+      lastEntryBeforeBeginning.weight + weightChangeFromLastEntry;
+  return estimatedWeight;
+}
