@@ -14,3 +14,7 @@ List<WeightEntry> prepareEntryList(
       _isMissingEntryFromBeginningDate(beginningDate, entries) &&
       _isAnyEntryBeforeBeginningDate(beginningDate, initialEntries)) {
     _addFakeEntryOnTheChartBeginning(initialEntries, entries, beginningDate);
+  }
+  return entries;
+}
+
