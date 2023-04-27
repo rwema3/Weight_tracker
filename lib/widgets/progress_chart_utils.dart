@@ -5,3 +5,7 @@ import 'package:weight_tracker/model/weight_entry.dart';
 List<WeightEntry> prepareEntryList(
     List<WeightEntry> initialEntries, DateTime beginningDate) {
   List<WeightEntry> entries = initialEntries
+      .where((entry) =>
+          entry.dateTime.isAfter(beginningDate) ||
+          copyDateWithoutTime(entry.dateTime)
+              .isAtSameMomentAs(copyDateWithoutTime(beginningDate)))
