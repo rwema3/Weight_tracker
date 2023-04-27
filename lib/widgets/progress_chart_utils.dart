@@ -60,3 +60,6 @@ bool _isAnyEntryBeforeBeginningDate(
   return entries.any((entry) => entry.dateTime.isBefore(beginningDate));
 }
 
+double _calculateWeightOnBeginningDate(WeightEntry lastEntryBeforeBeginning,
+    WeightEntry firstEntryAfterBeginning, DateTime beginningDate) {
+  DateTime firstEntryDateTime =
