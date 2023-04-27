@@ -12,3 +12,15 @@ import 'package:firebase_analytics/observer.dart';
 void main() {
   runApp(new MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  final FirebaseAnalytics analytics = new FirebaseAnalytics();
+  final Store<ReduxState> store = new Store<ReduxState>(reduce,
+      initialState: new ReduxState(
+          entries: [],
+          unit: 'kg',
+          removedEntryState: new RemovedEntryState(hasEntryBeenRemoved: false),
+          firebaseState: new FirebaseState(),
+          mainPageState: new MainPageReduxState(hasEntryBeenAdded: false),
+          weightEntryDialogState: new WeightEntryDialogReduxState()),
+      middleware: [middleware].toList());
